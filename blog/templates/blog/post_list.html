@@ -1,24 +1,19 @@
-<!DOCTYPE html>
 <html>
     <head>
-      <meta charset="utf-8">
-      <title>DongHyun's blog</title>
+        <title>Donghyun's Blog</title>
     </head>
     <body>
         <div>
-            <h1><a href="">Donghyun's blog</a></h1>
+            <h1><a href="">Donghyun's Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 25.01.2019, 11:50</p>
-            <h2><a href="">My first post</a></h2>
-            <p>첫번째 포스트입니다.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
 
-        <div>
-            <p>published: 25.01.2019, 11:51</p>
-            <h2><a href="">My second post</a></h2>
-            <p>두번째 포스트입니다.</p>
-        </div>
-    </body>    
+    </body>
 </html>
